@@ -12,5 +12,14 @@ fn simulate_fetching_data<'a>() -> Result<&'a str, &'a str> {
 }
 
 fn main() {
-    println!("Hello, world!");
+    for _ in 0..10 {
+        match simulate_fetching_data() {
+            Ok(data) => {
+                println!("{}", data);
+            },
+            Err(err) => {
+                println!("{}", err);
+            }
+        };
+    }
 }
